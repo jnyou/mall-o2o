@@ -51,41 +51,52 @@
 	<!-- 4.扫描web相关的bean -->
 	<context:component-scan base-package="com.mr.nanke.web" />
 	<!-- 5.权限拦截器 -->
-	<!-- <mvc:interceptors>
+	<mvc:interceptors>
+		<!-- 检验是否已登陆了店家管理系统的拦截器 -->
 		<mvc:interceptor>
-			<mvc:mapping path="/shop/**" />
-			<mvc:exclude-mapping path="/shop/ownerlogin" />
-			<mvc:exclude-mapping path="/shop/ownerlogincheck" />
-			<mvc:exclude-mapping path="/shop/logout" />
-			<mvc:exclude-mapping path="/shop/register" />
-			<bean id="ShopInterceptor" class="com.mr.nanke.interceptor.shop.ShopLoginInterceptor" />
+			<mvc:mapping path="/shopadmin/**" />
+			<bean id="ShopInterceptor" class="com.mr.nanke.interceptor.shopadmin.ShopLoginInterceptor" />
 		</mvc:interceptor>
 		<mvc:interceptor>
-			<mvc:mapping path="/shop/**" />
-			<mvc:exclude-mapping path="/shop/ownerlogin" />
-			<mvc:exclude-mapping path="/shop/ownerlogincheck" />
-			<mvc:exclude-mapping path="/shop/register" />
-			shoplist page
-			<mvc:exclude-mapping path="/shop/shoplist" />
-			<mvc:exclude-mapping path="/shop/logout" />
-			<mvc:exclude-mapping path="/shop/list" />
-			changepsw page
-			<mvc:exclude-mapping path="/shop/changepsw" />
-			<mvc:exclude-mapping path="/shop/changelocalpwd" />							
-			ownerbind page
-			<mvc:exclude-mapping path="/shop/ownerbind" />
-			<mvc:exclude-mapping path="/shop/bindlocalauth" />
-			shopmanage page
-			<mvc:exclude-mapping path="/shop/shopmanage" />
-			shopedit page
-			<mvc:exclude-mapping path="/shop/shopedit" />
-			<mvc:exclude-mapping path="/shop/getshopbyid" />
-			<mvc:exclude-mapping path="/shop/getshopinitinfo" />
-			<mvc:exclude-mapping path="/shop/registershop" />
+			<mvc:mapping path="/shopadmin/**" />
+			<!-- 不需要做拦截器的controller -->
+			<!-- shoplist page -->
+			<mvc:exclude-mapping path="/shopadmin/shoplist" /> <!-- 路由 -->
+			<mvc:exclude-mapping path="/shopadmin/getshoplist" />
+			<mvc:exclude-mapping path="/shopadmin/shopoperation" /> <!-- 路由 -->
+			<!-- changepsw page -->
+			<mvc:exclude-mapping path="/local/changepsw" /> <!-- 路由 -->
+			<mvc:exclude-mapping path="/local/changelocalauthpwd" />							
+			<!-- ownerbind page -->
+			<mvc:exclude-mapping path="/local/bindlocal" /> <!-- 路由 -->
+			<mvc:exclude-mapping path="/local/bindlocalauth" />
+			<!-- ownerlogincheck page -->
+			<mvc:exclude-mapping path="/local/login" /> <!-- 路由 -->
+			<mvc:exclude-mapping path="/local/logincheck" />
+			<!-- ownerlogout page -->
+			<mvc:exclude-mapping path="/local/logout" /> 
+			<!-- shopmanage page -->
+			<mvc:exclude-mapping path="/shopadmin/shopmanager" /><!-- 路由 -->
+			<mvc:exclude-mapping path="/shopadmin/getmanagerinfo" />
+			<!-- shopedit page -->
+			<mvc:exclude-mapping path="/shopadmin/modifyshop" />
+			<mvc:exclude-mapping path="/shopadmin/getInfoById" />
+			<mvc:exclude-mapping path="/shopadmin/getshopinitinfo" />
+			<mvc:exclude-mapping path="/shopadmin/registershop" />
+			<!-- product oage -->
+			<mvc:exclude-mapping path="/shopadmin/productmanage" />  <!-- 路由 -->
+			<mvc:exclude-mapping path="/shopadmin/productoperation" /> <!-- 路由 -->
+			<mvc:exclude-mapping path="/shopadmin/getproductlistbypage" />
+			<mvc:exclude-mapping path="/shopadmin/modifyproduct" />
+			<mvc:exclude-mapping path="/shopadmin/addproduct" />
+			<mvc:exclude-mapping path="/shopadmin/getproductbyid" />
+			<mvc:exclude-mapping path="/shopadmin/getproductcategorylist" />
+			<!-- productcategory page -->
+			<mvc:exclude-mapping path="/shopadmin/productcategorymanage" />
 			<bean id="ShopPermissionInterceptor"
-				class="com.mr.nanke.interceptor.shop.ShopPermissionInterceptor" />
+				class="com.mr.nanke.interceptor.shopadmin.ShopPermissionInterceptor" />
 		</mvc:interceptor>
-		<mvc:interceptor>
+		<!-- <mvc:interceptor>
 			<mvc:mapping path="/superadmin/**" />
 			<mvc:exclude-mapping path="/superadmin/login" />
 			<mvc:exclude-mapping path="/superadmin/logincheck" />
@@ -93,7 +104,7 @@
 			<mvc:exclude-mapping path="/superadmin/top" />
 			<bean id="SuperAdminInterceptor"
 				class="com.mr.nanke.interceptor.superadmin.SuperAdminLoginInterceptor" />
-		</mvc:interceptor>
+		</mvc:interceptor> -->
 
-	</mvc:interceptors> -->
+	</mvc:interceptors>
 </beans>

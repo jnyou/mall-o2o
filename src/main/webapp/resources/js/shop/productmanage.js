@@ -1,6 +1,6 @@
 $(function() {
 	var listUrl = '/o2o/shopadmin/getproductlistbypage?pageIndex=1&pageSize=9999';
-	var deleteUrl = '/o2o/shopadmin/modifyproduct';
+	var deleteUrl = '/o2o/shopadmin/modifyproduct'; //修改状态为0即可
 /**
  * 获取此列表下的商品列表
  */
@@ -24,7 +24,7 @@ $(function() {
 							+ item.productName
 							+ '</div>'
 							+ '<div class="col-20">'
-							+ item.priority
+							+ item.point
 							+ '</div>'
 							+ '<div class="col-40">'
 							+ '<a href="#" class="edit" data-id="'
@@ -99,8 +99,4 @@ $(function() {
 									+ e.currentTarget.dataset.id;
 						}
 					});
-
-	$('#new').click(function() {
-		window.location.href = '/myo2o/shop/productedit';
-	});
 });

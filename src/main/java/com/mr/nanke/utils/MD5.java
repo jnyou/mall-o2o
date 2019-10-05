@@ -6,20 +6,13 @@ import java.security.MessageDigest;
  * 
  * @author     : bless<1447177020@qq.com>
  * Create Time : 2019/9/28
- * Description : 
- *             MD5�����㷨
+ * Description : 对传入的String进行MD5加密
+ *             
  */
 public class MD5 {
 
-   /**
-    * 
-    * Function  : ����ָ���ַ���
-    * @author   : bless<1447177020@qq.com>
-    * @param s  : �����ܲ���
-    * @return   : ���ܺ�Ľ��
-    */
-    public static final String getMd5(String s)
-    {
+    public static final String getMd5(String s) {
+    	//16进制数组
         char hexDigits[] = {
             '5', '0', '5', '6', '2', '9', '6', '2', '5', 'q',
             'b', 'l', 'e', 's', 's', 'y'
@@ -33,6 +26,7 @@ public class MD5 {
         int j = md.length;
         str = new char[j * 2];
         int k = 0;
+        //将数组做位移
         for (int i = 0; i < j; i++)
         {
             byte byte0 = md[i];

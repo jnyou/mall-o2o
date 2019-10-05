@@ -5,9 +5,13 @@ import java.util.List;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import com.mr.nanke.dto.AreaExecution;
 import com.mr.nanke.entity.Area;
 
 public interface AreaService {
+	//redis中的KEY
+	public static final String AREALISTKRY = "arealist";
+
 	/**
 	 * 
 	 * @return
@@ -22,27 +26,27 @@ public interface AreaService {
 	 * @param area
 	 * @return
 	 */
-	//AreaExecution addArea(Area area);
+	AreaExecution addArea(Area area);
 
 	/**
 	 * 
 	 * @param area
 	 * @return
 	 */
-	//AreaExecution modifyArea(Area area);
+	AreaExecution modifyArea(Area area);
 
 	/**
 	 * 
 	 * @param areaId
 	 * @return
 	 */
-	//AreaExecution removeArea(long areaId);
+	AreaExecution removeArea(long areaId);
 
 	/**
 	 * 
 	 * @param areaIdList
 	 * @return
 	 */
-	//AreaExecution removeAreaList(List<Long> areaIdList);
+	AreaExecution removeAreaList(List<Long> areaIdList);
 
 }

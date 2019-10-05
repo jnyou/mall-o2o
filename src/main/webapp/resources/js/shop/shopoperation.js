@@ -4,7 +4,7 @@
 $(function() {
 	var shopId = getQueryString('shopId');
 	var isEdit = shopId ? true : false;
-	var queryShopById = '/o2o/shopadmin/getInfoById?shopId=' + shopId;
+	var queryShopById = '/o2o/shopadmin/getInfoById?shopId=' + shopId;	
 	var initUrl = '/o2o/shopadmin/getshopinitinfo';
 	var registerShopUrl = '/o2o/shopadmin/registershop';
 	var editShopUrl = '/o2o/shopadmin/modifyshop';
@@ -17,6 +17,7 @@ $(function() {
 
 	function getInfo(shopId) {
 		$.getJSON(queryShopById, function(data) {
+			console.log(data);
 			if (data.success) {
 				var shop = data.shop;
 				$('#shop-name').val(shop.shopName);

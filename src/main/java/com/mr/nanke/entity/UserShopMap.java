@@ -1,14 +1,15 @@
 package com.mr.nanke.entity;
 
 import java.util.Date;
-
+/**
+ * 2.0顾客店铺积分映射
+ * @author 夏小颜
+ *
+ */
 public class UserShopMap {
 	private Long userShopId;
-	private Long userId;
-	private Long shopId;
-	private String userName;
-	private String shopName;
 	private Date createTime;
+	//顾客在该店铺的积分
 	private Integer point;
 	private PersonInfo user;
 	private Product product;
@@ -20,38 +21,6 @@ public class UserShopMap {
 
 	public void setUserShopId(Long userShopId) {
 		this.userShopId = userShopId;
-	}
-
-	public Long getUserId() {
-		return userId;
-	}
-
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
-
-	public Long getShopId() {
-		return shopId;
-	}
-
-	public void setShopId(Long shopId) {
-		this.shopId = shopId;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public String getShopName() {
-		return shopName;
-	}
-
-	public void setShopName(String shopName) {
-		this.shopName = shopName;
 	}
 
 	public Date getCreateTime() {

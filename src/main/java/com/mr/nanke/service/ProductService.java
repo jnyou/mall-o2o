@@ -2,8 +2,6 @@ package com.mr.nanke.service;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
-
 import com.mr.nanke.dto.ImageHolder;
 import com.mr.nanke.dto.ProductExecution;
 import com.mr.nanke.entity.Product;

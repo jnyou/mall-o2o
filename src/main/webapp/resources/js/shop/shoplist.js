@@ -9,7 +9,7 @@ $(function () {
 				console.log(data);
 				if (data.success) {
 					handleList(data.shopList.shopList);
-					handleUser(data.personInfo);
+					handleUser(data.user);
 				}
 			}
 		});
@@ -47,22 +47,22 @@ $(function () {
 	}
 
 
-	$('#log-out').click(function () {
-		$.ajax({
-			url : "/myo2o/shop/logout",
-			type : "post",
-			contentType : false,
-			processData : false,
-			cache : false,
-			success : function(data) {
-				if (data.success) {
-					window.location.href = '/o2o/shopadmin/ownerlogin';
-				}
-			},
-			error : function(data, error) {
-				alert(error);
-			}
-		});
-	});
+//	$('#log-out').click(function () {
+//		$.ajax({
+//			url : "/myo2o/shop/logout",
+//			type : "post",
+//			contentType : false,
+//			processData : false,
+//			cache : false,
+//			success : function(data) {
+//				if (data.success) {
+//					window.location.href = '/o2o/shopadmin/ownerlogin';
+//				}
+//			},
+//			error : function(data, error) {
+//				alert(error);
+//			}
+//		});
+//	});
 	
 });

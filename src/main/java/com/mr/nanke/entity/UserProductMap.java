@@ -1,19 +1,30 @@
 package com.mr.nanke.entity;
 
 import java.util.Date;
-
+/***
+ * 2.0顾客消费的商品映射
+ * @author 夏小颜
+ *
+ */
 public class UserProductMap {
 	private Long userProductId;
-	private Long userId;
-	private Long productId;
-	private Long shopId;
-	private String userName;
-	private String productName;
 	private Date createTime;
 	private Integer point;
+	//顾客信息实体
 	private PersonInfo user;
+	//商品信息实体
 	private Product product;
 	private Shop shop;
+	//操作员信息实体
+	private PersonInfo operator;
+
+	public PersonInfo getOperator() {
+		return operator;
+	}
+
+	public void setOperator(PersonInfo operator) {
+		this.operator = operator;
+	}
 
 	public Long getUserProductId() {
 		return userProductId;
@@ -21,46 +32,6 @@ public class UserProductMap {
 
 	public void setUserProductId(Long userProductId) {
 		this.userProductId = userProductId;
-	}
-
-	public Long getUserId() {
-		return userId;
-	}
-
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
-
-	public Long getProductId() {
-		return productId;
-	}
-
-	public void setProductId(Long productId) {
-		this.productId = productId;
-	}
-
-	public Long getShopId() {
-		return shopId;
-	}
-
-	public void setShopId(Long shopId) {
-		this.shopId = shopId;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public String getProductName() {
-		return productName;
-	}
-
-	public void setProductName(String productName) {
-		this.productName = productName;
 	}
 
 	public Date getCreateTime() {

@@ -8,6 +8,8 @@ import com.mr.nanke.entity.HeadLine;
 
 
 public interface HeadLineService {	
+	//redis中的KEY
+	public static final String HLLISTKEY = "headlinelist";
 	/***
 	 * 
 	 * @param headLineCondition

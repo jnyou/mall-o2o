@@ -1,22 +1,36 @@
 package com.mr.nanke.entity;
 
 import java.util.Date;
-
+/***
+ * 
+ * 2.0 顾客已领取奖品的映射
+ * @author 夏小颜
+ *
+ */
 public class UserAwardMap {
 
 	private Long userAwardId;
-	private Long userId;
-	private Long awardId;
-	private Long shopId;
-	private String userName;
-	private String awardName;
-	private Date expireTime;
 	private Date createTime;
+	//使用状态0：未兑换，1.已兑换
 	private Integer usedStatus;
+	//领取奖品所消耗的积分
 	private Integer point;
-	private PersonInfo user;
+	//奖品信息实体类
 	private Award award;
+	//店铺实体类
 	private Shop shop;
+	//顾客信息
+	private PersonInfo user;
+	//操作员的信息实体类
+	private PersonInfo operator;
+	
+	public PersonInfo getOperator() {
+		return operator;
+	}
+
+	public void setOperator(PersonInfo operator) {
+		this.operator = operator;
+	}
 
 	public Long getUserAwardId() {
 		return userAwardId;
@@ -24,54 +38,6 @@ public class UserAwardMap {
 
 	public void setUserAwardId(Long userAwardId) {
 		this.userAwardId = userAwardId;
-	}
-
-	public Long getUserId() {
-		return userId;
-	}
-
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
-
-	public Long getAwardId() {
-		return awardId;
-	}
-
-	public void setAwardId(Long awardId) {
-		this.awardId = awardId;
-	}
-
-	public Long getShopId() {
-		return shopId;
-	}
-
-	public void setShopId(Long shopId) {
-		this.shopId = shopId;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public String getAwardName() {
-		return awardName;
-	}
-
-	public void setAwardName(String awardName) {
-		this.awardName = awardName;
-	}
-
-	public Date getExpireTime() {
-		return expireTime;
-	}
-
-	public void setExpireTime(Date expireTime) {
-		this.expireTime = expireTime;
 	}
 
 	public Date getCreateTime() {

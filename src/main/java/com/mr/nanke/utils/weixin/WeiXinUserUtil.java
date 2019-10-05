@@ -90,6 +90,11 @@ public class WeiXinUserUtil {
 		}
 	}
 
+	/**
+	 * 获取用户的信息
+	 * @param user
+	 * @return
+	 */
 	public static PersonInfo getPersonInfoFromRequest(WeiXinUser user) {
 		PersonInfo personInfo = new PersonInfo();
 		personInfo.setName(user.getNickName());

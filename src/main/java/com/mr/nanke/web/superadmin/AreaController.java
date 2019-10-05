@@ -10,20 +10,19 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mr.nanke.entity.Area;
 import com.mr.nanke.service.AreaService;
 
 @Controller
-@RequestMapping("/superadmin")
+@RequestMapping("superadmin")
 public class AreaController {
 	//定义日志信息
 	Logger logger = LoggerFactory.getLogger(AreaController.class);
 	@Autowired
 	private AreaService areaService;
-	@RequestMapping(value = "/listarea",method =RequestMethod.GET)
+	@RequestMapping("listarea")
 	@ResponseBody
 	public Map<String, Object> listArea(){
 		logger.info("===start===");

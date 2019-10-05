@@ -8,6 +8,8 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.mr.nanke.entity.ShopCategory;
 
 public interface ShopCategoryService {
+	//redis中的KEY
+	public static final String SCLISTKEY = "shopcategorylist";
 	/**
 	 * 
 	 * @return

@@ -29,4 +29,10 @@ public class FrontendController {
 		//转发至商品详情页
 		return "frontend/shopdetail";
 	}
+	
+	@RequestMapping("productdetail")
+	public String getProductDetail() {
+		//转发至物品详情页
+		return "frontend/productdetail";
+	}
 }

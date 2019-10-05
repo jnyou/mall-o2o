@@ -6,7 +6,6 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import com.mr.nanke.entity.Product;
-import com.mr.nanke.entity.Shop;
 
 public interface ProductDao {
 	

@@ -1,10 +1,5 @@
 package com.mr.nanke.web.shopadmin;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,10 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
@@ -37,8 +29,6 @@ import com.mr.nanke.service.ShopCategoryService;
 import com.mr.nanke.service.ShopService;
 import com.mr.nanke.utils.CodeUtil;
 import com.mr.nanke.utils.HttpServletRequestUtil;
-import com.mr.nanke.utils.ImageUtil;
-import com.mr.nanke.utils.PathUtil;
 
 @Controller
 @RequestMapping("shopadmin")
@@ -90,17 +80,19 @@ public class ShopManagerController {
 	@ResponseBody
 	public Map<String, Object> getShopList(HttpServletRequest request){
 		Map<String, Object> modelMap = new HashMap<String, Object>();
-		PersonInfo personInfo = new PersonInfo();
-		personInfo.setUserId(9L);
-		personInfo.setName("test");
-		request.getSession().setAttribute("user", personInfo);
-		request.getSession().getAttribute("user");
+//		PersonInfo personInfo = new PersonInfo();
+//		personInfo.setUserId(9L);
+//		personInfo.setName("test");
+//		request.getSession().setAttribute("user", personInfo);
+		PersonInfo user = (PersonInfo) request.getSession().getAttribute("user");
 		try {
 			Shop shopCondition = new Shop();
-			shopCondition.setOwner(personInfo);
+			shopCondition.setOwner(user);
 			ShopExecution shopList = shopService.getShopList(shopCondition, 0, 100);
 			modelMap.put("shopList", shopList);     // 用户店铺
-			modelMap.put("personInfo",personInfo);  //用户个人信息
+			//将店铺返给session中供权限判断
+			request.getSession().setAttribute("shopList", shopList.getShop());
+			modelMap.put("user",user);  //用户个人信息
 			modelMap.put("success", true);
 		}catch (Exception e) {
 			modelMap.put("success", false);
@@ -246,7 +238,7 @@ public class ShopManagerController {
 	}
 
 	// 修改
-	@RequestMapping(value = "modifyshop", method = RequestMethod.POST)
+	@RequestMapping("modifyshop")
 	@ResponseBody
 	public Map<String, Object> modifyshop(HttpServletRequest request) {
 		Map<String, Object> modelMap = new HashMap<String, Object>();

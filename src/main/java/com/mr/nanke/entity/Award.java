@@ -1,18 +1,24 @@
 package com.mr.nanke.entity;
 
 import java.util.Date;
-
+/**
+ * 2.0 奖品
+ * @author 夏小颜
+ *
+ */
 public class Award {
 	private Long awardId;
-	private String awardName;
+	private String awardName; //奖品名
 	private String awardDesc;
 	private String awardImg;
-	private Integer point;
+	private Integer point; //所需的积分
 	private Integer priority;
 	private Date createTime;
 	private Date expireTime;
 	private Date lastEditTime;
+	//可用状态
 	private Integer enableStatus;
+	//属于哪个店铺 ，只需要shopId，所以不需要实体类
 	private Long shopId;
 
 	public Long getAwardId() {
