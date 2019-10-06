@@ -17,6 +17,7 @@
 
 	<!-- 2.静态资源默认servlet配置 (1)加入对静态资源的处理：js,gif,png (2)允许使用"/"做整体映射 -->
 	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<!-- 定义默认的请求处理器 -->
 	<mvc:default-servlet-handler />
 
 	<!-- 3.定义视图解析器 -->
@@ -65,34 +66,34 @@
 			<mvc:exclude-mapping path="/shopadmin/getshoplist" />
 			<mvc:exclude-mapping path="/shopadmin/shopoperation" /> <!-- 路由 -->
 			<!-- changepsw page -->
-			<mvc:exclude-mapping path="/local/changepsw" /> <!-- 路由 -->
-			<mvc:exclude-mapping path="/local/changelocalauthpwd" />							
+			<!-- <mvc:exclude-mapping path="/local/changepsw" /> 路由
+			<mvc:exclude-mapping path="/local/changelocalauthpwd" />	 -->						
 			<!-- ownerbind page -->
-			<mvc:exclude-mapping path="/local/bindlocal" /> <!-- 路由 -->
+			<!-- <mvc:exclude-mapping path="/local/bindlocal" /> 路由
 			<mvc:exclude-mapping path="/local/bindlocalauth" />
-			<!-- ownerlogincheck page -->
-			<mvc:exclude-mapping path="/local/login" /> <!-- 路由 -->
+			ownerlogincheck page
+			<mvc:exclude-mapping path="/local/login" /> 路由
 			<mvc:exclude-mapping path="/local/logincheck" />
-			<!-- ownerlogout page -->
-			<mvc:exclude-mapping path="/local/logout" /> 
+			ownerlogout page
+			<mvc:exclude-mapping path="/local/logout" />  -->
 			<!-- shopmanage page -->
 			<mvc:exclude-mapping path="/shopadmin/shopmanager" /><!-- 路由 -->
 			<mvc:exclude-mapping path="/shopadmin/getmanagerinfo" />
 			<!-- shopedit page -->
-			<mvc:exclude-mapping path="/shopadmin/modifyshop" />
-			<mvc:exclude-mapping path="/shopadmin/getInfoById" />
+			<!-- <mvc:exclude-mapping path="/shopadmin/modifyshop" />
+			<mvc:exclude-mapping path="/shopadmin/getInfoById" /> -->
 			<mvc:exclude-mapping path="/shopadmin/getshopinitinfo" />
 			<mvc:exclude-mapping path="/shopadmin/registershop" />
 			<!-- product oage -->
-			<mvc:exclude-mapping path="/shopadmin/productmanage" />  <!-- 路由 -->
-			<mvc:exclude-mapping path="/shopadmin/productoperation" /> <!-- 路由 -->
+			<!-- <mvc:exclude-mapping path="/shopadmin/productmanage" />  路由
+			<mvc:exclude-mapping path="/shopadmin/productoperation" /> 路由
 			<mvc:exclude-mapping path="/shopadmin/getproductlistbypage" />
 			<mvc:exclude-mapping path="/shopadmin/modifyproduct" />
 			<mvc:exclude-mapping path="/shopadmin/addproduct" />
 			<mvc:exclude-mapping path="/shopadmin/getproductbyid" />
-			<mvc:exclude-mapping path="/shopadmin/getproductcategorylist" />
+			<mvc:exclude-mapping path="/shopadmin/getproductcategorylist" /> -->
 			<!-- productcategory page -->
-			<mvc:exclude-mapping path="/shopadmin/productcategorymanage" />
+			<!-- <mvc:exclude-mapping path="/shopadmin/productcategorymanage" /> -->
 			<bean id="ShopPermissionInterceptor"
 				class="com.mr.nanke.interceptor.shopadmin.ShopPermissionInterceptor" />
 		</mvc:interceptor>

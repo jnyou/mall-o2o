@@ -91,7 +91,7 @@ public class ShopManagerController {
 			ShopExecution shopList = shopService.getShopList(shopCondition, 0, 100);
 			modelMap.put("shopList", shopList);     // 用户店铺
 			//将店铺返给session中供权限判断
-			request.getSession().setAttribute("shopList", shopList.getShop());
+			request.getSession().setAttribute("shopList", shopList.getShopList());
 			modelMap.put("user",user);  //用户个人信息
 			modelMap.put("success", true);
 		}catch (Exception e) {
